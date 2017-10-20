@@ -21,22 +21,12 @@ namespace Lab5
     /// </summary>
     public partial class MainWindow : Window
     {
-        //List<User> UserList = new List<User>();
-
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void ButtonCreateUser_Click(object sender, RoutedEventArgs e)
-        {
-            if(CheckInput())
-            {
-                NewUser();
-            }
-        }
-
-        // If Name or Email input is invalid:
+        // Function to check id name or email input is invalid:
         public bool CheckInput()
         {
             if (TextBoxName.Text == null || TextBoxName.Text == "")
@@ -55,10 +45,26 @@ namespace Lab5
             }
         }
 
+        // Function to re-disable buttons after use
+        public void ButtonsDisabled()
+        {
+            ButtonDeleteUser.IsEnabled = false;
+            ButtonMakeAdmin.IsEnabled = false;
+            ButtonDemoteAdmin.IsEnabled = false;
+        }
+
+
+        // Function to create a new user and add them to the user listbox
         public void NewUser()
         {
-            //Currently displays object name. 
             ListBoxUsers.Items.Add(new User(TextBoxName.Text, TextBoxEmail.Text, false));
+        }
+        private void ButtonCreateUser_Click(object sender, RoutedEventArgs e)
+        {
+            if(CheckInput())
+            {
+                NewUser();
+            }
         }
 
         private void ListBoxUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -66,13 +72,33 @@ namespace Lab5
             ButtonDeleteUser.IsEnabled = true;
             ButtonChangeUserInfo.IsEnabled = true;
             ButtonMakeAdmin.IsEnabled = true;
-            LabelShowUserInfo.Content = ListBoxUsers.SelectedItem.ToString();
+           //LabelShowUserInfo.Content = ListBoxUsers.SelectedItem.ToString();
         }
 
         private void ButtonDeleteUser_Click(object sender, RoutedEventArgs e)
         {
             ListBoxUsers.Items.Remove(ListBoxUsers.SelectedItem);
             LabelShowUserInfo.Content = null;
+            ButtonsDisabled();
+        }
+
+        private void ButtonMakeAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            ListBoxAdmins.Items.Add(ListBoxUsers.SelectedItem);
+            ListBoxUsers.Items.Remove(ListBoxUsers.SelectedItem);
+            ButtonsDisabled();
+        }
+
+        private void ListBoxAdmins_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ButtonDemoteAdmin.IsEnabled = true;
+        }
+
+        private void ButtonDemoteAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            ListBoxUsers.Items.Add(ListBoxAdmins.SelectedItem);
+            ListBoxAdmins.Items.Remove(ListBoxAdmins.SelectedItem);
+            ButtonsDisabled();
         }
     }
 }

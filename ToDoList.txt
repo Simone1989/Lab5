@@ -1,2 +1,4 @@
 To do list:
 - Add regex exceptions
+- Om man väljer edit så ska namnet och emailen på den valda användaren poppa up i respektive textBox igen, och edit-knappen ska 
+  ändra content till "save".
