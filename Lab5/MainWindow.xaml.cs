@@ -24,5 +24,13 @@ namespace Lab5
         {
             InitializeComponent();
         }
+
+        private void ButtonCreateUser_Click(object sender, RoutedEventArgs e)
+        {
+            if((TextBoxName.Text == null || TextBoxName.Text == ""))
+            {
+
+            }
+        }
     }
 }
