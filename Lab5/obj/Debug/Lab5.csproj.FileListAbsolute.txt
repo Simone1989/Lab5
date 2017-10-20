@@ -13,3 +13,18 @@ E:\Mina dokument\MON STUFF\Repos\Lab 5\Lab5\Lab5\obj\Debug\Lab5.csproj.GenerateR
 E:\Mina dokument\MON STUFF\Repos\Lab 5\Lab5\Lab5\obj\Debug\Lab5.csproj.CoreCompileInputs.cache
 E:\Mina dokument\MON STUFF\Repos\Lab 5\Lab5\Lab5\obj\Debug\Lab5.exe
 E:\Mina dokument\MON STUFF\Repos\Lab 5\Lab5\Lab5\obj\Debug\Lab5.pdb
+C:\Users\Mon\source\repos\Labbar\Lab5\Lab5\Lab5\bin\Debug\Lab5.exe.config
+C:\Users\Mon\source\repos\Labbar\Lab5\Lab5\Lab5\bin\Debug\Lab5.exe
+C:\Users\Mon\source\repos\Labbar\Lab5\Lab5\Lab5\bin\Debug\Lab5.pdb
+C:\Users\Mon\source\repos\Labbar\Lab5\Lab5\Lab5\obj\Debug\Lab5.csprojResolveAssemblyReference.cache
+C:\Users\Mon\source\repos\Labbar\Lab5\Lab5\Lab5\obj\Debug\MainWindow.g.cs
+C:\Users\Mon\source\repos\Labbar\Lab5\Lab5\Lab5\obj\Debug\App.g.cs
+C:\Users\Mon\source\repos\Labbar\Lab5\Lab5\Lab5\obj\Debug\Lab5_MarkupCompile.cache
+C:\Users\Mon\source\repos\Labbar\Lab5\Lab5\Lab5\obj\Debug\Lab5_MarkupCompile.lref
+C:\Users\Mon\source\repos\Labbar\Lab5\Lab5\Lab5\obj\Debug\MainWindow.baml
+C:\Users\Mon\source\repos\Labbar\Lab5\Lab5\Lab5\obj\Debug\Lab5.g.resources
+C:\Users\Mon\source\repos\Labbar\Lab5\Lab5\Lab5\obj\Debug\Lab5.Properties.Resources.resources
+C:\Users\Mon\source\repos\Labbar\Lab5\Lab5\Lab5\obj\Debug\Lab5.csproj.GenerateResource.Cache
+C:\Users\Mon\source\repos\Labbar\Lab5\Lab5\Lab5\obj\Debug\Lab5.csproj.CoreCompileInputs.cache
+C:\Users\Mon\source\repos\Labbar\Lab5\Lab5\Lab5\obj\Debug\Lab5.exe
+C:\Users\Mon\source\repos\Labbar\Lab5\Lab5\Lab5\obj\Debug\Lab5.pdb
