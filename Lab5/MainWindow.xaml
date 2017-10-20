@@ -21,7 +21,7 @@
         <Label x:Name="LabelUser" Content="Users" HorizontalAlignment="Left" Margin="23,234,0,0" VerticalAlignment="Top" Height="26" Width="39"/>
         <Button x:Name="ButtonChangeUserInfo" Content="Edit" HorizontalAlignment="Left" Margin="27,488,0,0" VerticalAlignment="Top" Width="114" Height="22" IsEnabled="False"/>
         <Button x:Name="ButtonDeleteUser" Content="Delete" HorizontalAlignment="Left" Margin="27,532,0,0" VerticalAlignment="Top" Width="114" IsEnabled="False" Height="20" Click="ButtonDeleteUser_Click"/>
-        <Label x:Name="LabelShowUserInfo" Content="Label som visar all info om en vald" HorizontalAlignment="Left" Margin="27,451,0,0" VerticalAlignment="Top" Height="26" Width="auto"/>
+        <Label x:Name="LabelShowUserInfo" Content="Label som visar all info om en vald user" HorizontalAlignment="Left" Margin="27,451,0,0" VerticalAlignment="Top" Height="26" Width="auto"/>
         <Button x:Name="ButtonMakeAdmin" Content="Promote" HorizontalAlignment="Left" Margin="230,488,0,0" VerticalAlignment="Top" Width="121" IsEnabled="False" Height="20" Click="ButtonMakeAdmin_Click"/>
         <Button x:Name="ButtonDemoteAdmin" Content="Demote" HorizontalAlignment="Left" Margin="230,532,0,0" VerticalAlignment="Top" Width="121" IsEnabled="False" Height="20" Click="ButtonDemoteAdmin_Click"/>
         <ListBox x:Name="ListBoxAdmins" DisplayMemberPath="Name" HorizontalAlignment="Left" Height="195" Margin="230,256,0,0" VerticalAlignment="Top" Width="161" SelectionChanged="ListBoxAdmins_SelectionChanged"/>

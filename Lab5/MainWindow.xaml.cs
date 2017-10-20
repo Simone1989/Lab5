@@ -72,7 +72,11 @@ namespace Lab5
             ButtonDeleteUser.IsEnabled = true;
             ButtonChangeUserInfo.IsEnabled = true;
             ButtonMakeAdmin.IsEnabled = true;
-           //LabelShowUserInfo.Content = ListBoxUsers.SelectedItem.ToString();
+            LabelShowUserInfo.Content = ((User)ListBoxUsers.SelectedItem).Name;
+            if()
+            {
+
+            }
         }
 
         private void ButtonDeleteUser_Click(object sender, RoutedEventArgs e)
