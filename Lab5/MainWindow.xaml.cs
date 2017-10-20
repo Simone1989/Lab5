@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
 
 namespace Lab5
 {
@@ -20,6 +21,8 @@ namespace Lab5
     /// </summary>
     public partial class MainWindow : Window
     {
+        //List<User> UserList = new List<User>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -27,10 +30,26 @@ namespace Lab5
 
         private void ButtonCreateUser_Click(object sender, RoutedEventArgs e)
         {
-            if((TextBoxName.Text == null || TextBoxName.Text == ""))
-            {
+            CheckInput();
+            NewUser();
+        }
 
+        // If Name or Email input is invalid: 
+        public void CheckInput()
+        {
+            if (TextBoxName.Text == null || TextBoxName.Text == "")
+            {
+                MessageBox.Show("Please enter name.");
             }
+            else if(TextBoxEmail.Text == null || TextBoxEmail.Text == "")
+            {
+                MessageBox.Show("Ivalid email.");
+            }
+        }
+        public void NewUser()
+        {
+            User new2 = new User(TextBoxName.Text, TextBoxEmail.Text, false);
+            ListBoxUsers.Items.Add(new2.Name);
         }
     }
 }
