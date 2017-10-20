@@ -60,5 +60,19 @@ namespace Lab5
             //Currently displays object name. 
             ListBoxUsers.Items.Add(new User(TextBoxName.Text, TextBoxEmail.Text, false));
         }
+
+        private void ListBoxUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ButtonDeleteUser.IsEnabled = true;
+            ButtonChangeUserInfo.IsEnabled = true;
+            ButtonMakeAdmin.IsEnabled = true;
+            LabelShowUserInfo.Content = ListBoxUsers.SelectedItem.ToString();
+        }
+
+        private void ButtonDeleteUser_Click(object sender, RoutedEventArgs e)
+        {
+            ListBoxUsers.Items.Remove(ListBoxUsers.SelectedItem);
+            LabelShowUserInfo.Content = null;
+        }
     }
 }
