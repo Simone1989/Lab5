@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab5"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="User administration" Height="650" Width="450">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="219*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="TextBoxName" HorizontalAlignment="Left" Height="33" Margin="20,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="371"/>
+        <TextBox x:Name="TextBoxEmail" HorizontalAlignment="Left" Height="35" TextWrapping="Wrap" VerticalAlignment="Top" Width="371" Margin="20,141,0,0"/>
+        <Label x:Name="LabelCreateUser" Content="Create  a user" HorizontalAlignment="Left" Margin="20,24,0,0" VerticalAlignment="Top" Width="170" FontSize="14" FontWeight="Bold" Height="29"/>
+        <Label x:Name="LabelName" Content="Name" HorizontalAlignment="Left" Margin="20,49,0,0" VerticalAlignment="Top" Height="26" Width="42"/>
+        <Label x:Name="LabelEmail" Content="E-mail address" HorizontalAlignment="Left" Margin="20,115,0,0" VerticalAlignment="Top" Height="26" Width="87"/>
+        <Button x:Name="ButtonCreateUser" Content="Create user" HorizontalAlignment="Left" Margin="23,189,0,0" VerticalAlignment="Top" Width="106" Height="27" FontSize="14"/>
+        <ListBox x:Name="ListBoxUsers" HorizontalAlignment="Left" Height="195" Margin="27,255,0,0" VerticalAlignment="Top" Width="163"/>
+        <Label x:Name="LabelUser" Content="Users" HorizontalAlignment="Left" Margin="23,234,0,0" VerticalAlignment="Top" Height="26" Width="39"/>
+        <Button x:Name="ButtonChangeUserInfo" Content="Change user info" HorizontalAlignment="Left" Margin="27,488,0,0" VerticalAlignment="Top" Width="114" Height="22" IsEnabled="False"/>
+        <Button x:Name="ButtonDeleteUser" Content="Delete user" HorizontalAlignment="Left" Margin="27,532,0,0" VerticalAlignment="Top" Width="114" IsEnabled="False" Height="20"/>
+        <Label x:Name="LabelShowUserIno" Content="Label som visar all info om en vald user" HorizontalAlignment="Left" Margin="27,451,0,0" VerticalAlignment="Top" Height="26" Width="343"/>
+        <Button x:Name="ButtonMakeAdmin" Content="Promote user" HorizontalAlignment="Left" Margin="178,488,0,0" VerticalAlignment="Top" Width="121" IsEnabled="False" Height="20"/>
+        <Button Content="Demote admin" HorizontalAlignment="Left" Margin="178,532,0,0" VerticalAlignment="Top" Width="121" IsEnabled="False" Height="20"/>
+        <ListBox x:Name="ListBoxAdmins" HorizontalAlignment="Left" Height="195" Margin="216,256,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label x:Name="LabelAdmins" Content="Admins" HorizontalAlignment="Left" Margin="216,234,0,0" VerticalAlignment="Top" Height="26" Width="50"/>
+
     </Grid>
 </Window>
