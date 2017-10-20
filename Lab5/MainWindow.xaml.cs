@@ -30,26 +30,35 @@ namespace Lab5
 
         private void ButtonCreateUser_Click(object sender, RoutedEventArgs e)
         {
-            CheckInput();
-            NewUser();
+            if(CheckInput())
+            {
+                NewUser();
+            }
         }
 
         // If Name or Email input is invalid:
-        public void CheckInput()
+        public bool CheckInput()
         {
             if (TextBoxName.Text == null || TextBoxName.Text == "")
             {
                 MessageBox.Show("Please enter name.");
+                return false;
             }
             else if (TextBoxEmail.Text == null || TextBoxEmail.Text == "")
             {
                 MessageBox.Show("Ivalid email.");
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
+
         public void NewUser()
         {
-            User new2 = new User(TextBoxName.Text, TextBoxEmail.Text, false);
-            ListBoxUsers.Items.Add(new2.Name);
+            //Currently displays object name. 
+            ListBoxUsers.Items.Add(new User(TextBoxName.Text, TextBoxEmail.Text, false));
         }
     }
 }
