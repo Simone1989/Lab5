@@ -22,6 +22,9 @@ namespace Lab5
     public partial class MainWindow : Window
     {
         string emailPattern = @"(\w|\D)+[@](\w|\D)+\.(\w|\D)+";
+        int numberOfAdmins = 0;
+        int numberOfUsers = 0;
+
 
         public MainWindow()
         {
@@ -71,6 +74,7 @@ namespace Lab5
         public void NewUser()
         {
             ListBoxUsers.Items.Add(new User(TextBoxName.Text, TextBoxEmail.Text));
+            numberOfUsers++;
         }
         private void ButtonCreateUser_Click(object sender, RoutedEventArgs e)
         {
@@ -103,6 +107,7 @@ namespace Lab5
         {
             ListBoxUsers.Items.Remove(ListBoxUsers.SelectedItem);
             ListBoxAdmins.Items.Remove(ListBoxAdmins.SelectedItem);
+            numberOfUsers--;
             ButtonsDisabled();
         }
 
@@ -110,6 +115,7 @@ namespace Lab5
         {
             ListBoxAdmins.Items.Add(ListBoxUsers.SelectedItem);
             ListBoxUsers.Items.Remove(ListBoxUsers.SelectedItem);
+            numberOfAdmins++;
             ButtonsDisabled();
         }
 

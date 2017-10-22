@@ -18,14 +18,14 @@
         <Label x:Name="LabelEmail" Content="E-mail address" HorizontalAlignment="Left" Margin="20,115,0,0" VerticalAlignment="Top" Height="26" Width="87"/>
         <Button x:Name="ButtonCreateUser" Content="Create user" HorizontalAlignment="Left" Margin="23,189,0,0" VerticalAlignment="Top" Width="106" Height="27" FontSize="14" Click="ButtonCreateUser_Click"/>
         <ListBox x:Name="ListBoxUsers" DisplayMemberPath="Name" HorizontalAlignment="Left" Height="195" Margin="27,255,0,0" VerticalAlignment="Top" Width="161" SelectionChanged="ListBoxUsers_SelectionChanged"/>
-        <Label x:Name="LabelUser" Content="Users" HorizontalAlignment="Left" Margin="23,234,0,0" VerticalAlignment="Top" Height="26" Width="39"/>
+        <Label x:Name="LabelUser" Content="Users: " HorizontalAlignment="Left" Margin="23,234,0,0" VerticalAlignment="Top" Height="26" Width="39"/>
         <Button x:Name="ButtonChangeUserInfo" Content="Edit" HorizontalAlignment="Left" Margin="27,505,0,0" VerticalAlignment="Top" Width="114" Height="22" IsEnabled="False" Click="ButtonChangeUserInfo_Click"/>
         <Button x:Name="ButtonDeleteUser" Content="Delete" HorizontalAlignment="Left" Margin="27,532,0,0" VerticalAlignment="Top" Width="114" IsEnabled="False" Height="20" Click="ButtonDeleteUser_Click"/>
         <Label x:Name="LabelShowUserInfo" Content="Label som visar all info om en vald user" HorizontalAlignment="Left" Margin="27,451,0,0" VerticalAlignment="Top" Height="auto" Width="auto"/>
         <Button x:Name="ButtonMakeAdmin" Content="Promote" HorizontalAlignment="Left" Margin="230,505,0,0" VerticalAlignment="Top" Width="121" IsEnabled="False" Height="20" Click="ButtonMakeAdmin_Click" Grid.ColumnSpan="2"/>
         <Button x:Name="ButtonDemoteAdmin" Content="Demote" HorizontalAlignment="Left" Margin="230,532,0,0" VerticalAlignment="Top" Width="121" IsEnabled="False" Height="20" Click="ButtonDemoteAdmin_Click" Grid.ColumnSpan="2"/>
         <ListBox x:Name="ListBoxAdmins" DisplayMemberPath="Name" HorizontalAlignment="Left" Height="195" Margin="230,256,0,0" VerticalAlignment="Top" Width="161" SelectionChanged="ListBoxAdmins_SelectionChanged" Grid.ColumnSpan="2"/>
-        <Label x:Name="LabelAdmins" Content="Admins" HorizontalAlignment="Left" Margin="230,234,0,0" VerticalAlignment="Top" Height="26" Width="50"/>
+        <Label x:Name="LabelAdmins" Content="Admins: " HorizontalAlignment="Left" Margin="230,234,0,0" VerticalAlignment="Top" Height="26" Width="64"/>
 
     </Grid>
 </Window>
