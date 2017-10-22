@@ -89,6 +89,7 @@ namespace Lab5
             ButtonMakeAdmin.IsEnabled = true;
             if ((User)ListBoxUsers.SelectedItem != null)
             {
+                ListBoxAdmins.UnselectAll();
                 LabelShowUserInfo.Content = "Username: " + 
                     ((User)ListBoxUsers.SelectedItem).Name + "\nEmail Adress: " + ((User)ListBoxUsers.SelectedItem).Email;
             }
@@ -118,6 +119,7 @@ namespace Lab5
             ButtonDeleteUser.IsEnabled = true;
             if ((User)ListBoxAdmins.SelectedItem != null)
             {
+                ListBoxUsers.UnselectAll();
                 LabelShowUserInfo.Content = "Admin: " + ((User)ListBoxAdmins.SelectedItem).Name +
                     "\nEmail Adress: " + ((User)ListBoxAdmins.SelectedItem).Email;
             }

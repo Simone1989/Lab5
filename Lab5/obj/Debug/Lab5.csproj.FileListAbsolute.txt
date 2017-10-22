@@ -43,3 +43,17 @@ C:\Users\Joakim\C#\Lab5\Lab5\obj\Debug\Lab5.csproj.GenerateResource.Cache
 C:\Users\Joakim\C#\Lab5\Lab5\obj\Debug\Lab5.csproj.CoreCompileInputs.cache
 C:\Users\Joakim\C#\Lab5\Lab5\obj\Debug\Lab5.exe
 C:\Users\Joakim\C#\Lab5\Lab5\obj\Debug\Lab5.pdb
+C:\Users\Okem\Documents\C#\Lab5\Lab5\bin\Debug\Lab5.exe.config
+C:\Users\Okem\Documents\C#\Lab5\Lab5\bin\Debug\Lab5.exe
+C:\Users\Okem\Documents\C#\Lab5\Lab5\bin\Debug\Lab5.pdb
+C:\Users\Okem\Documents\C#\Lab5\Lab5\obj\Debug\Lab5.csprojResolveAssemblyReference.cache
+C:\Users\Okem\Documents\C#\Lab5\Lab5\obj\Debug\MainWindow.g.cs
+C:\Users\Okem\Documents\C#\Lab5\Lab5\obj\Debug\App.g.cs
+C:\Users\Okem\Documents\C#\Lab5\Lab5\obj\Debug\Lab5_MarkupCompile.cache
+C:\Users\Okem\Documents\C#\Lab5\Lab5\obj\Debug\Lab5_MarkupCompile.lref
+C:\Users\Okem\Documents\C#\Lab5\Lab5\obj\Debug\MainWindow.baml
+C:\Users\Okem\Documents\C#\Lab5\Lab5\obj\Debug\Lab5.g.resources
+C:\Users\Okem\Documents\C#\Lab5\Lab5\obj\Debug\Lab5.Properties.Resources.resources
+C:\Users\Okem\Documents\C#\Lab5\Lab5\obj\Debug\Lab5.csproj.GenerateResource.Cache
+C:\Users\Okem\Documents\C#\Lab5\Lab5\obj\Debug\Lab5.exe
+C:\Users\Okem\Documents\C#\Lab5\Lab5\obj\Debug\Lab5.pdb
