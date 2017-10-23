@@ -98,6 +98,7 @@ namespace Lab5
             ButtonMakeAdmin.IsEnabled = true;
             if ((User)ListBoxUsers.SelectedItem != null)
             {
+                ListBoxAdmins.UnselectAll();
                 LabelShowUserInfo.Content = "Username: " +
                     ((User)ListBoxUsers.SelectedItem).Name + "\nEmail Adress: " + ((User)ListBoxUsers.SelectedItem).Email;
             }
@@ -128,6 +129,7 @@ namespace Lab5
             ButtonChangeUserInfo.IsEnabled = true;
             if ((User)ListBoxAdmins.SelectedItem != null)
             {
+                ListBoxUsers.UnselectAll();
                 LabelShowUserInfo.Content = "Admin: " + ((User)ListBoxAdmins.SelectedItem).Name +
                     "\nEmail Adress: " + ((User)ListBoxAdmins.SelectedItem).Email;
             }
@@ -146,13 +148,8 @@ namespace Lab5
 
         private void ButtonChangeUserInfo_Click(object sender, RoutedEventArgs e)
         {
-            //ListBoxUsers.Items.OfType((User)ListBoxUsers.Items.Where()
-
-
             TextBoxName.Text = ((User)ListBoxUsers.SelectedItem).Name;
             TextBoxEmail.Text = ((User)ListBoxUsers.SelectedItem).Email;
-            //TextBoxName.Text = ((User)ListBoxAdmins.SelectedItem).Name;
-            //TextBoxEmail.Text = ((User)ListBoxAdmins.SelectedItem).Email;
             ButtonCreateUser.Content = "Update";
 
             if ((String)ButtonCreateUser.Content == "Update")
