@@ -60,14 +60,51 @@ namespace Lab5
             ButtonChangeUserInfo.IsEnabled = false;
         }
 
-        //Funktion som kollar om användarnamn/email redan finns
-        //OBS ANVÄNDS EJ
-        public void CheckIndex()
+        //Function that checks if UserNameList already contains a certain object in both user and admin list
+        public bool CheckForDuplicate()
         {
-            if (ListBoxUsers.Items.Contains((User)ListBoxUsers.SelectedItem))
+            if ((UserNameList(ListBoxUsers).Contains(TextBoxName.Text) && UserEmailList(ListBoxUsers).Contains(TextBoxEmail.Text)) || (UserNameList(ListBoxAdmins).Contains(TextBoxName.Text) && UserEmailList(ListBoxAdmins).Contains(TextBoxEmail.Text)))
             {
-                MessageBox.Show("bajs");
+                MessageBox.Show("Username & Email already exists.\nTry again.");
+                return false;
             }
+            else if ((UserNameList(ListBoxUsers).Contains(TextBoxName.Text) && !UserEmailList(ListBoxUsers).Contains(TextBoxEmail.Text)) || (UserNameList(ListBoxAdmins).Contains(TextBoxName.Text) && !UserEmailList(ListBoxAdmins).Contains(TextBoxEmail.Text)))
+            {
+                MessageBox.Show("Username already exists.\nTry again.");
+                return false;
+            }
+            else if ((!UserNameList(ListBoxUsers).Contains(TextBoxName.Text) && UserEmailList(ListBoxUsers).Contains(TextBoxEmail.Text)) || (!UserNameList(ListBoxAdmins).Contains(TextBoxName.Text) && UserEmailList(ListBoxAdmins).Contains(TextBoxEmail.Text)))
+            {
+                MessageBox.Show("Email already exists.\nTry again.");
+
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        //Name list created for Duplicate check
+        private List<string> UserNameList(ListBox listbox)
+        {
+            List<string> nameList = new List<string>();
+            for (int i = 0; i < listbox.Items.Count; i++)
+            {
+                nameList.Add(((User)listbox.Items.GetItemAt(i)).Name);
+            }
+            return nameList;
+        }
+
+        //Email list created for Duplicate check
+        private List<string> UserEmailList(ListBox listbox)
+        {
+            List<string> emailList = new List<string>();
+            for (int i = 0; i < listbox.Items.Count; i++)
+            {
+                emailList.Add(((User)listbox.Items.GetItemAt(i)).Email);
+            }
+            return emailList;
         }
 
         // Function to create a new user and add them to the user listbox
@@ -119,9 +156,13 @@ namespace Lab5
         {
             if (CheckInput())
             {
-                NewUser();
-                TextBoxName.Clear();
-                TextBoxEmail.Clear();
+                //Här triggas Duplicate-funktionen. 
+                if (CheckForDuplicate())
+                {
+                    NewUser();
+                    TextBoxName.Clear();
+                    TextBoxEmail.Clear();
+                }
             }
 
             if ((String)ButtonCreateUser.Content == update)

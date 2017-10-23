@@ -1,6 +1,9 @@
 To do list:
-- Om man väljer edit så ska namnet och emailen på den valda användaren poppa up i respektive textBox igen, och edit-knappen ska 
-  ändra content till "save".
-- (KAN INTE REPRODUCERA)Fixa bug när man har en ensam admin (deleteknapp blir oanvändbar) 
-- Editknapp utan att ha skapat en user blir exception
+- Bug: Edit gillar inte att vi kollar dupliceringar. Kan vi kanske skriva om editen så att vi enklare kan kolla ifall ett Nytt item skapas eller om det har editeras? 
+- Unselect triggas för tillfället inte när man får upp felmeddelande om duplicering. 
+
+Bonus:
 - NumberOfAdmins/Users-variabel som uppdateras med listan. (Jocke fixar)
+
+Unknown:
+- (KAN INTE REPRODUCERA)Fixa bug när man har en ensam admin (deleteknapp blir oanvändbar) 
