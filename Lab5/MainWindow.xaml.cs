@@ -22,6 +22,8 @@ namespace Lab5
     public partial class MainWindow : Window
     {
         string emailPattern = @"(\w|\D)+[@](\w|\D)+\.(\w|\D)+";
+        const string update = "Update";
+        const string createUser = "Create user";
 
         public MainWindow()
         {
@@ -33,7 +35,7 @@ namespace Lab5
         {
             Match match = Regex.Match(TextBoxEmail.Text, emailPattern);
 
-            if (TextBoxName.Text == null || TextBoxName.Text == "")
+            if (TextBoxName.Text == null || TextBoxName.Text == string.Empty)
             {
                 MessageBox.Show("Please enter name.");
                 return false;
@@ -71,23 +73,69 @@ namespace Lab5
         // Function to create a new user and add them to the user listbox
         public void NewUser()
         {
-            ListBoxUsers.Items.Add(new User(TextBoxName.Text, TextBoxEmail.Text));
+            if (ButtonCreateUser.Content.Equals(createUser) || ((User)ListBoxUsers.SelectedItem != null))
+            {
+                ListBoxUsers.Items.Add(new User(TextBoxName.Text, TextBoxEmail.Text));
+            }
+
+            else if(((User)ListBoxAdmins.SelectedItem != null))
+            {
+                ListBoxAdmins.Items.Add(new User(TextBoxName.Text, TextBoxEmail.Text));
+            }
+        }
+
+        // Function to be called when the edit-button is pressed
+        public void EditUserOrAdmin()
+        {
+            if (((User)ListBoxUsers.SelectedItem != null))
+            {
+                TextBoxName.Text = ((User)ListBoxUsers.SelectedItem).Name;
+                TextBoxEmail.Text = ((User)ListBoxUsers.SelectedItem).Email;
+                ButtonCreateUser.Content = update;
+
+                if ((String)ButtonCreateUser.Content == update)
+                {
+                    ((User)ListBoxUsers.SelectedItem).Name = TextBoxName.Text;
+                    ((User)ListBoxUsers.SelectedItem).Email = TextBoxEmail.Text;
+                    ButtonsDisabled();
+                }
+            }
+            else if (((User)ListBoxAdmins.SelectedItem != null))
+            {
+                TextBoxName.Text = ((User)ListBoxAdmins.SelectedItem).Name;
+                TextBoxEmail.Text = ((User)ListBoxAdmins.SelectedItem).Email;
+                ButtonCreateUser.Content = update;
+
+                if ((String)ButtonCreateUser.Content == update)
+                {
+                    ((User)ListBoxAdmins.SelectedItem).Name = TextBoxName.Text;
+                    ((User)ListBoxAdmins.SelectedItem).Email = TextBoxEmail.Text;
+                    ButtonsDisabled();
+                }
+            }
         }
 
         private void ButtonCreateUser_Click(object sender, RoutedEventArgs e)
         {
-
             if (CheckInput())
             {
                 NewUser();
                 TextBoxName.Clear();
                 TextBoxEmail.Clear();
             }
-            if ((String)ButtonCreateUser.Content == "Update")
+
+            if ((String)ButtonCreateUser.Content == update)
             {
-                ListBoxUsers.Items.Remove(ListBoxUsers.SelectedItem);
+                if (((User)ListBoxUsers.SelectedItem != null))
+                {
+                    ListBoxUsers.Items.Remove(ListBoxUsers.SelectedItem);
+                }
+                else if (((User)ListBoxAdmins.SelectedItem != null))
+                {
+                    ListBoxAdmins.Items.Remove(ListBoxAdmins.SelectedItem);
+                }
             }
-            ButtonCreateUser.Content = "Create user";
+            ButtonCreateUser.Content = createUser;
             ButtonsDisabled();
         }
 
@@ -148,16 +196,7 @@ namespace Lab5
 
         private void ButtonChangeUserInfo_Click(object sender, RoutedEventArgs e)
         {
-            TextBoxName.Text = ((User)ListBoxUsers.SelectedItem).Name;
-            TextBoxEmail.Text = ((User)ListBoxUsers.SelectedItem).Email;
-            ButtonCreateUser.Content = "Update";
-
-            if ((String)ButtonCreateUser.Content == "Update")
-            {
-                ((User)ListBoxUsers.SelectedItem).Name = TextBoxName.Text;
-                ((User)ListBoxUsers.SelectedItem).Email = TextBoxEmail.Text;
-                ButtonsDisabled();
-            }
+             EditUserOrAdmin();
         }
     }
 }

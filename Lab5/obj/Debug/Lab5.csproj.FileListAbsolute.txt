@@ -57,3 +57,18 @@ C:\Users\Okem\Documents\C#\Lab5\Lab5\obj\Debug\Lab5.Properties.Resources.resourc
 C:\Users\Okem\Documents\C#\Lab5\Lab5\obj\Debug\Lab5.csproj.GenerateResource.Cache
 C:\Users\Okem\Documents\C#\Lab5\Lab5\obj\Debug\Lab5.exe
 C:\Users\Okem\Documents\C#\Lab5\Lab5\obj\Debug\Lab5.pdb
+E:\Mina dokument\MON STUFF\Repos\Lab5\Lab5\Lab5\bin\Debug\Lab5.exe.config
+E:\Mina dokument\MON STUFF\Repos\Lab5\Lab5\Lab5\bin\Debug\Lab5.exe
+E:\Mina dokument\MON STUFF\Repos\Lab5\Lab5\Lab5\bin\Debug\Lab5.pdb
+E:\Mina dokument\MON STUFF\Repos\Lab5\Lab5\Lab5\obj\Debug\Lab5.csprojResolveAssemblyReference.cache
+E:\Mina dokument\MON STUFF\Repos\Lab5\Lab5\Lab5\obj\Debug\MainWindow.g.cs
+E:\Mina dokument\MON STUFF\Repos\Lab5\Lab5\Lab5\obj\Debug\App.g.cs
+E:\Mina dokument\MON STUFF\Repos\Lab5\Lab5\Lab5\obj\Debug\Lab5_MarkupCompile.cache
+E:\Mina dokument\MON STUFF\Repos\Lab5\Lab5\Lab5\obj\Debug\Lab5_MarkupCompile.lref
+E:\Mina dokument\MON STUFF\Repos\Lab5\Lab5\Lab5\obj\Debug\MainWindow.baml
+E:\Mina dokument\MON STUFF\Repos\Lab5\Lab5\Lab5\obj\Debug\Lab5.g.resources
+E:\Mina dokument\MON STUFF\Repos\Lab5\Lab5\Lab5\obj\Debug\Lab5.Properties.Resources.resources
+E:\Mina dokument\MON STUFF\Repos\Lab5\Lab5\Lab5\obj\Debug\Lab5.csproj.GenerateResource.Cache
+E:\Mina dokument\MON STUFF\Repos\Lab5\Lab5\Lab5\obj\Debug\Lab5.csproj.CoreCompileInputs.cache
+E:\Mina dokument\MON STUFF\Repos\Lab5\Lab5\Lab5\obj\Debug\Lab5.exe
+E:\Mina dokument\MON STUFF\Repos\Lab5\Lab5\Lab5\obj\Debug\Lab5.pdb
