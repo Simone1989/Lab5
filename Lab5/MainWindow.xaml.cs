@@ -22,9 +22,6 @@ namespace Lab5
     public partial class MainWindow : Window
     {
         string emailPattern = @"(\w|\D)+[@](\w|\D)+\.(\w|\D)+";
-        int numberOfAdmins = 0;
-        int numberOfUsers = 0;
-
 
         public MainWindow()
         {
@@ -58,6 +55,7 @@ namespace Lab5
             ButtonDeleteUser.IsEnabled = false;
             ButtonMakeAdmin.IsEnabled = false;
             ButtonDemoteAdmin.IsEnabled = false;
+            ButtonChangeUserInfo.IsEnabled = false;
         }
 
         //Funktion som kollar om användarnamn/email redan finns
@@ -74,16 +72,23 @@ namespace Lab5
         public void NewUser()
         {
             ListBoxUsers.Items.Add(new User(TextBoxName.Text, TextBoxEmail.Text));
-            numberOfUsers++;
         }
+
         private void ButtonCreateUser_Click(object sender, RoutedEventArgs e)
         {
-            if(CheckInput())
+
+            if (CheckInput())
             {
                 NewUser();
                 TextBoxName.Clear();
                 TextBoxEmail.Clear();
             }
+            if ((String)ButtonCreateUser.Content == "Update")
+            {
+                ListBoxUsers.Items.Remove(ListBoxUsers.SelectedItem);
+            }
+            ButtonCreateUser.Content = "Create user";
+            ButtonsDisabled();
         }
 
         private void ListBoxUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -93,8 +98,7 @@ namespace Lab5
             ButtonMakeAdmin.IsEnabled = true;
             if ((User)ListBoxUsers.SelectedItem != null)
             {
-                ListBoxAdmins.UnselectAll();
-                LabelShowUserInfo.Content = "Username: " + 
+                LabelShowUserInfo.Content = "Username: " +
                     ((User)ListBoxUsers.SelectedItem).Name + "\nEmail Adress: " + ((User)ListBoxUsers.SelectedItem).Email;
             }
             else
@@ -107,7 +111,6 @@ namespace Lab5
         {
             ListBoxUsers.Items.Remove(ListBoxUsers.SelectedItem);
             ListBoxAdmins.Items.Remove(ListBoxAdmins.SelectedItem);
-            numberOfUsers--;
             ButtonsDisabled();
         }
 
@@ -115,7 +118,6 @@ namespace Lab5
         {
             ListBoxAdmins.Items.Add(ListBoxUsers.SelectedItem);
             ListBoxUsers.Items.Remove(ListBoxUsers.SelectedItem);
-            numberOfAdmins++;
             ButtonsDisabled();
         }
 
@@ -123,9 +125,9 @@ namespace Lab5
         {
             ButtonDemoteAdmin.IsEnabled = true;
             ButtonDeleteUser.IsEnabled = true;
+            ButtonChangeUserInfo.IsEnabled = true;
             if ((User)ListBoxAdmins.SelectedItem != null)
             {
-                ListBoxUsers.UnselectAll();
                 LabelShowUserInfo.Content = "Admin: " + ((User)ListBoxAdmins.SelectedItem).Name +
                     "\nEmail Adress: " + ((User)ListBoxAdmins.SelectedItem).Email;
             }
@@ -144,9 +146,21 @@ namespace Lab5
 
         private void ButtonChangeUserInfo_Click(object sender, RoutedEventArgs e)
         {
+            //ListBoxUsers.Items.OfType((User)ListBoxUsers.Items.Where()
+
+
             TextBoxName.Text = ((User)ListBoxUsers.SelectedItem).Name;
             TextBoxEmail.Text = ((User)ListBoxUsers.SelectedItem).Email;
+            //TextBoxName.Text = ((User)ListBoxAdmins.SelectedItem).Name;
+            //TextBoxEmail.Text = ((User)ListBoxAdmins.SelectedItem).Email;
             ButtonCreateUser.Content = "Update";
+
+            if ((String)ButtonCreateUser.Content == "Update")
+            {
+                ((User)ListBoxUsers.SelectedItem).Name = TextBoxName.Text;
+                ((User)ListBoxUsers.SelectedItem).Email = TextBoxEmail.Text;
+                ButtonsDisabled();
+            }
         }
     }
 }
