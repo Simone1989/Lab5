@@ -26,6 +26,7 @@
         <Button x:Name="ButtonDemoteAdmin" Content="Demote" HorizontalAlignment="Left" Margin="230,532,0,0" VerticalAlignment="Top" Width="121" IsEnabled="False" Height="20" Click="ButtonDemoteAdmin_Click"/>
         <ListBox x:Name="ListBoxAdmins" DisplayMemberPath="Name" HorizontalAlignment="Left" Height="195" Margin="230,256,0,0" VerticalAlignment="Top" Width="161" SelectionChanged="ListBoxAdmins_SelectionChanged"/>
         <Label x:Name="LabelAdmins" Content="Admins" HorizontalAlignment="Left" Margin="230,234,0,0" VerticalAlignment="Top" Height="26" Width="50"/>
+        <Button x:Name="UpdateButton" Content="Update" HorizontalAlignment="Left" Margin="216,189,0,0" VerticalAlignment="Top" Width="107" Height="27" IsEnabled="False" Click="UpdateButton_Click"/>
 
     </Grid>
 </Window>

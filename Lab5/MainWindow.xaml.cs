@@ -121,59 +121,15 @@ namespace Lab5
             }
         }
 
-        // Function to be called when the edit-button is pressed
-        public void EditUserOrAdmin()
-        {
-            if (((User)ListBoxUsers.SelectedItem != null))
-            {
-                TextBoxName.Text = ((User)ListBoxUsers.SelectedItem).Name;
-                TextBoxEmail.Text = ((User)ListBoxUsers.SelectedItem).Email;
-                ButtonCreateUser.Content = update;
-
-                if ((String)ButtonCreateUser.Content == update)
-                {
-                    ((User)ListBoxUsers.SelectedItem).Name = TextBoxName.Text;
-                    ((User)ListBoxUsers.SelectedItem).Email = TextBoxEmail.Text;
-                    ButtonsDisabled();
-                }
-            }
-            else if (((User)ListBoxAdmins.SelectedItem != null))
-            {
-                TextBoxName.Text = ((User)ListBoxAdmins.SelectedItem).Name;
-                TextBoxEmail.Text = ((User)ListBoxAdmins.SelectedItem).Email;
-                ButtonCreateUser.Content = update;
-
-                if ((String)ButtonCreateUser.Content == update)
-                {
-                    ((User)ListBoxAdmins.SelectedItem).Name = TextBoxName.Text;
-                    ((User)ListBoxAdmins.SelectedItem).Email = TextBoxEmail.Text;
-                    ButtonsDisabled();
-                }
-            }
-        }
-
         private void ButtonCreateUser_Click(object sender, RoutedEventArgs e)
         {
             if (CheckInput())
             {
-                //Här triggas Duplicate-funktionen. 
                 if (CheckForDuplicate())
                 {
                     NewUser();
                     TextBoxName.Clear();
                     TextBoxEmail.Clear();
-                }
-            }
-
-            if ((String)ButtonCreateUser.Content == update)
-            {
-                if (((User)ListBoxUsers.SelectedItem != null))
-                {
-                    ListBoxUsers.Items.Remove(ListBoxUsers.SelectedItem);
-                }
-                else if (((User)ListBoxAdmins.SelectedItem != null))
-                {
-                    ListBoxAdmins.Items.Remove(ListBoxAdmins.SelectedItem);
                 }
             }
             ButtonCreateUser.Content = createUser;
@@ -237,7 +193,46 @@ namespace Lab5
 
         private void ButtonChangeUserInfo_Click(object sender, RoutedEventArgs e)
         {
-             EditUserOrAdmin();
+            if (((User)ListBoxUsers.SelectedItem != null))
+            {
+                TextBoxName.Text = ((User)ListBoxUsers.SelectedItem).Name;
+                TextBoxEmail.Text = ((User)ListBoxUsers.SelectedItem).Email;
+            }
+            else if (((User)ListBoxAdmins.SelectedItem != null))
+            {
+                TextBoxName.Text = ((User)ListBoxAdmins.SelectedItem).Name;
+                TextBoxEmail.Text = ((User)ListBoxAdmins.SelectedItem).Email;
+            }
+            ButtonsDisabled();
+            UpdateButton.IsEnabled = true;
+            ButtonCreateUser.IsEnabled = false;
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (CheckInput())
+            {
+                if (CheckForDuplicate())
+                {
+                    if (((User)ListBoxUsers.SelectedItem != null))
+                    {
+                        ((User)ListBoxUsers.SelectedItem).Name = TextBoxName.Text;
+                        ((User)ListBoxUsers.SelectedItem).Email = TextBoxEmail.Text;
+                        ListBoxUsers.Items.Remove(ListBoxUsers.SelectedItem);
+                    }
+                    else if (((User)ListBoxAdmins.SelectedItem != null))
+                    {
+                        ((User)ListBoxAdmins.SelectedItem).Name = TextBoxName.Text;
+                        ((User)ListBoxAdmins.SelectedItem).Email = TextBoxEmail.Text;
+                        ListBoxAdmins.Items.Remove(ListBoxAdmins.SelectedItem);
+                    }
+                    ButtonsDisabled();
+                    UpdateButton.IsEnabled = false;
+                    NewUser();
+                    TextBoxName.Clear();
+                    TextBoxEmail.Clear();
+                }
+            }
         }
     }
 }
