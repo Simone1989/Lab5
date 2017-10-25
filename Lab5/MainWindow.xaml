@@ -16,16 +16,17 @@
         <Label x:Name="LabelCreateUser" Content="Create  a user" HorizontalAlignment="Left" Margin="20,24,0,0" VerticalAlignment="Top" Width="170" FontSize="14" FontWeight="Bold" Height="29"/>
         <Label x:Name="LabelName" Content="Name" HorizontalAlignment="Left" Margin="20,48,0,0" VerticalAlignment="Top" Height="26" Width="42"/>
         <Label x:Name="LabelEmail" Content="E-mail address" HorizontalAlignment="Left" Margin="20,115,0,0" VerticalAlignment="Top" Height="26" Width="87"/>
-        <Button x:Name="ButtonCreateUser" Content="Create user" HorizontalAlignment="Left" Margin="23,189,0,0" VerticalAlignment="Top" Width="106" Height="27" FontSize="14" Click="ButtonCreateUser_Click"/>
+        <Button x:Name="ButtonCreateUser" Content="Create user" HorizontalAlignment="Left" Margin="23,189,0,0" VerticalAlignment="Top" Width="106" Height="27" FontSize="14" Click="ButtonCreateUser_Click" ToolTip="Create a new user"/>
         <ListBox x:Name="ListBoxUsers" DisplayMemberPath="Name" HorizontalAlignment="Left" Height="195" Margin="27,255,0,0" VerticalAlignment="Top" Width="161" SelectionChanged="ListBoxUsers_SelectionChanged"/>
         <Label x:Name="LabelUser" Content="Users" HorizontalAlignment="Left" Margin="23,234,0,0" VerticalAlignment="Top" Height="26" Width="39"/>
-        <Button x:Name="ButtonChangeUserInfo" Content="Edit" HorizontalAlignment="Left" Margin="27,505,0,0" VerticalAlignment="Top" Width="114" Height="22" IsEnabled="False" Click="ButtonChangeUserInfo_Click"/>
-        <Button x:Name="ButtonDeleteUser" Content="Delete" HorizontalAlignment="Left" Margin="27,532,0,0" VerticalAlignment="Top" Width="114" IsEnabled="False" Height="20" Click="ButtonDeleteUser_Click"/>
+        <Button x:Name="ButtonChangeUserInfo" Content="Edit" HorizontalAlignment="Left" Margin="27,505,0,0" VerticalAlignment="Top" Width="114" Height="22" IsEnabled="False" Click="ButtonChangeUserInfo_Click" ToolTip="Select a user to edit" />
+        <Button x:Name="ButtonDeleteUser" Content="Delete" HorizontalAlignment="Left" Margin="27,532,0,0" VerticalAlignment="Top" Width="114" IsEnabled="False" Height="20" Click="ButtonDeleteUser_Click" ToolTip="Delete a selected user" />
         <Label x:Name="LabelShowUserInfo" Content="" HorizontalAlignment="Left" Margin="27,451,0,0" VerticalAlignment="Top" Height="auto" Width="auto"/>
-        <Button x:Name="ButtonMakeAdmin" Content="Promote" HorizontalAlignment="Left" Margin="230,505,0,0" VerticalAlignment="Top" Width="121" IsEnabled="False" Height="20" Click="ButtonMakeAdmin_Click"/>
-        <Button x:Name="ButtonDemoteAdmin" Content="Demote" HorizontalAlignment="Left" Margin="230,532,0,0" VerticalAlignment="Top" Width="121" IsEnabled="False" Height="20" Click="ButtonDemoteAdmin_Click"/>
+        <Button x:Name="ButtonMakeAdmin" Content="Promote" HorizontalAlignment="Left" Margin="230,505,0,0" VerticalAlignment="Top" Width="121" IsEnabled="False" Height="20" Click="ButtonMakeAdmin_Click" ToolTip="Promote a user to admin" />
+        <Button x:Name="ButtonDemoteAdmin" Content="Demote" HorizontalAlignment="Left" Margin="230,532,0,0" VerticalAlignment="Top" Width="121" IsEnabled="False" Height="20" Click="ButtonDemoteAdmin_Click" ToolTip="Demote an admin to a regular user" />
         <ListBox x:Name="ListBoxAdmins" DisplayMemberPath="Name" HorizontalAlignment="Left" Height="195" Margin="230,256,0,0" VerticalAlignment="Top" Width="161" SelectionChanged="ListBoxAdmins_SelectionChanged"/>
         <Label x:Name="LabelAdmins" Content="Admins" HorizontalAlignment="Left" Margin="230,234,0,0" VerticalAlignment="Top" Height="26" Width="50"/>
+        <Button x:Name="UpdateButton" Content="Update" HorizontalAlignment="Left" Margin="230,189,0,0" VerticalAlignment="Top" Width="107" Height="27" IsEnabled="False" Click="UpdateButton_Click" ToolTip="Update the information of a selected user" FontSize="14" />
 
     </Grid>
 </Window>
