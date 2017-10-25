@@ -22,8 +22,6 @@ namespace Lab5
     public partial class MainWindow : Window
     {
         string emailPattern = @"(\w|\D)+[@](\w|\D)+\.(\w|\D)+";
-        const string update = "Update";
-        const string createUser = "Create user";
 
         public MainWindow()
         {
@@ -221,6 +219,8 @@ namespace Lab5
             ButtonsDisabled();
             UpdateButton.IsEnabled = true;
             ButtonCreateUser.IsEnabled = false;
+            ListBoxUsers.IsEnabled = false;
+            ListBoxAdmins.IsEnabled = false;
         }
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
@@ -243,6 +243,8 @@ namespace Lab5
                 ButtonsDisabled();
                 UpdateButton.IsEnabled = false;
                 ButtonCreateUser.IsEnabled = true;
+                ListBoxUsers.IsEnabled = true;
+                ListBoxAdmins.IsEnabled = true;
                 TextBoxName.Clear();
                 TextBoxEmail.Clear();
             }
