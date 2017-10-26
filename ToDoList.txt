@@ -1,9 +1,5 @@
 To do list:
 - Bug: Edit gillar inte att vi kollar dupliceringar. Kan vi kanske skriva om editen så att vi enklare kan kolla ifall ett Nytt item skapas eller om det har editeras? 
-- Unselect triggas för tillfället inte när man får upp felmeddelande om duplicering. 
 
 Bonus:
 - NumberOfAdmins/Users-variabel som uppdateras med listan. (Jocke fixar)
-
-Unknown:
-- (KAN INTE REPRODUCERA)Fixa bug när man har en ensam admin (deleteknapp blir oanvändbar) 
